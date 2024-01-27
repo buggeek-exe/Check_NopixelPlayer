@@ -1,4 +1,4 @@
-const url = 'http://15.204.216.10:30120/players.json';
+const url = 'https://15.204.216.10:30120/players.json';
 
 setInterval(() => {
     fetch(url)
