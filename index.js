@@ -1,7 +1,7 @@
 async function getPlayerLength(ip) {
     if (!ip || typeof ip !== "string")
         throw new Error(`ip and port must be present and must be a string`);
-    const data = await fetch(`http://${ip}/players.json`);
+    const data = await fetch(`https://${ip}/players.json`);
     const json = await data.json();
     return json.length;
 }
