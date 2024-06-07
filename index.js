@@ -26,14 +26,13 @@ function discord_message(webHookURL, message) {
 var LowPlayer = false
 
 setInterval(async () => {
-    const ip = "15.204.216.10:30120"
+    const ip = "15.204.207.46:30120"
     var playercount = await getPlayerLength(ip);
     var maxplayer = await getMaxPlayers(ip);
     $('#now_player').text(playercount);
     $('#max_player').text(maxplayer);
     if (playercount <= 100 && LowPlayer == false) {
         LowPlayer = true
-        discord_message('https://discord.com/api/webhooks/936650461090549810/VWceX2NluZTVmNV6h1NkfMI5MkCfEXICyO6el0mWvVsjrRp8IarVThfC8i0ePTTulM29', `ตอนนี้มีคนน้อยกว่า 100 คนแล้วนะครับ ${playercount}/220`)
     } else if (playercount > 100 && LowPlayer == true) {
         LowPlayer = false
     }
